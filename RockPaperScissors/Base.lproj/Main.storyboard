@@ -44,7 +44,7 @@
                                             <constraint firstAttribute="width" constant="150" id="bbS-qO-VvG"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="About"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Options"/>
                                         <connections>
                                             <segue destination="MJF-HS-9Hn" kind="show" id="THQ-gt-VfO"/>
                                         </connections>
@@ -107,7 +107,7 @@
                                 <rect key="frame" x="75" y="482" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="OUH-av-FrR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUH-av-FrR">
                                 <rect key="frame" x="75" y="92" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -131,6 +131,7 @@
                     <connections>
                         <outlet property="computerChoice" destination="OUH-av-FrR" id="4qO-lC-s92"/>
                         <outlet property="playerChoice" destination="EV0-Uo-uGA" id="8xo-oA-JdL"/>
+                        <outlet property="playerOptions" destination="s8S-Yf-GQh" id="GAk-CH-n3H"/>
                         <outlet property="textOutlet" destination="dh0-pm-hRY" id="KwX-Ii-tU1"/>
                     </connections>
                 </viewController>
@@ -138,53 +139,51 @@
             </objects>
             <point key="canvasLocation" x="730.76923076923072" y="3.5545023696682461"/>
         </scene>
-        <!--View Controller-->
+        <!--Options View Controller-->
         <scene sceneID="XiU-6w-dS5">
             <objects>
-                <viewController id="MJF-HS-9Hn" sceneMemberID="viewController">
+                <viewController id="MJF-HS-9Hn" customClass="OptionsViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UWD-NK-5tM">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpp-BB-0zi">
-                                <rect key="frame" x="89" y="72" width="212" height="41"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-3" maxValue="3" minimumValueImage="flame" catalog="system" maximumValueImage="flame.fill" translatesAutoresizingMaskIntoConstraints="NO" id="O0u-Zp-Rc7">
+                                <rect key="frame" x="97" y="148" width="197" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="difficultySlider:" destination="MJF-HS-9Hn" eventType="valueChanged" id="cCT-lA-4Jg"/>
+                                    <action selector="difficultySlider:" destination="GWH-pq-Jdy" eventType="valueChanged" id="su5-OL-QTU"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpp-BB-0zi">
+                                <rect key="frame" x="130" y="72" width="130.33333333333337" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="u5Y-po-g94">
-                                <rect key="frame" x="75" y="209" width="240" height="423"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xXQ-py-obp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="u5Y-po-g94" firstAttribute="leading" secondItem="xXQ-py-obp" secondAttribute="leading" constant="75" id="0wH-Bl-oqg"/>
                             <constraint firstItem="bpp-BB-0zi" firstAttribute="top" secondItem="xXQ-py-obp" secondAttribute="top" constant="25" id="34X-cx-F4q"/>
                             <constraint firstItem="bpp-BB-0zi" firstAttribute="centerX" secondItem="UWD-NK-5tM" secondAttribute="centerX" id="3r7-AX-ho5"/>
-                            <constraint firstItem="u5Y-po-g94" firstAttribute="centerX" secondItem="UWD-NK-5tM" secondAttribute="centerX" id="arP-FC-21U"/>
-                            <constraint firstItem="xXQ-py-obp" firstAttribute="bottom" secondItem="u5Y-po-g94" secondAttribute="bottom" constant="155" id="fYk-46-XQW"/>
-                            <constraint firstItem="u5Y-po-g94" firstAttribute="centerY" secondItem="UWD-NK-5tM" secondAttribute="centerY" constant="27" id="sDo-VQ-kSU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Krp-lH-u52"/>
+                    <connections>
+                        <outlet property="difficultySliderOutlet" destination="O0u-Zp-Rc7" id="rsH-7l-0dv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Keg-32-YpV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="GWH-pq-Jdy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-126.15384615384615" y="663.98104265402844"/>
         </scene>
     </scenes>
     <resources>
-        <image name="paper" width="229" height="317"/>
+        <image name="flame" catalog="system" width="106" height="128"/>
+        <image name="flame.fill" catalog="system" width="106" height="128"/>
         <image name="rock" width="308" height="363"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
