@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q2z-Qt-me4">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -8,21 +8,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="i4p-ME-Bn2">
+            <objects>
+                <navigationController id="Q2z-Qt-me4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8za-mK-Q1V">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mHA-0F-Kgv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I3c-e1-5Fy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1109" y="4"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="VHF-2e-3F6">
-                                <rect key="frame" x="95" y="287" width="200" height="270"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="VHF-2e-3F6">
+                                <rect key="frame" x="95" y="331" width="200" height="290"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iri-ib-ePN">
-                                        <rect key="frame" x="25" y="0.0" width="150" height="43.333333333333336"/>
+                                        <rect key="frame" x="25" y="0.0" width="150" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="ubD-Qw-OJg"/>
+                                            <constraint firstAttribute="height" constant="50" id="6lO-h8-eIi"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ubD-Qw-OJg"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="One Player"/>
@@ -30,18 +47,11 @@
                                             <segue destination="Rhc-hI-eJx" kind="show" id="rzz-3d-bmW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7I-bZ-Z0Q">
-                                        <rect key="frame" x="25" y="113.3333333333333" width="150" height="43.333333333333329"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="FXF-e9-PVJ"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Two player"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aG-b6-ow5">
-                                        <rect key="frame" x="25" y="226.66666666666663" width="150" height="43.333333333333314"/>
+                                        <rect key="frame" x="25" y="240" width="150" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="bbS-qO-VvG"/>
+                                            <constraint firstAttribute="height" constant="50" id="2EX-9M-eRG"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="bbS-qO-VvG"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Options"/>
@@ -50,6 +60,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="gTS-GH-FT5"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -61,6 +74,7 @@
                             <constraint firstItem="VHF-2e-3F6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tgD-q0-042"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="s04-1t-DtU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,11 +85,11 @@
             <objects>
                 <viewController id="Rhc-hI-eJx" customClass="GameViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sAV-ui-fzB">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s8S-Yf-GQh">
-                                <rect key="frame" x="63" y="702.66666666666663" width="264" height="34.333333333333371"/>
+                                <rect key="frame" x="63" y="725.66666666666663" width="264" height="34.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3c-AL-NEJ">
                                         <rect key="frame" x="0.0" y="0.0" width="88" height="34.333333333333336"/>
@@ -103,7 +117,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rock" translatesAutoresizingMaskIntoConstraints="NO" id="EV0-Uo-uGA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EV0-Uo-uGA">
                                 <rect key="frame" x="75" y="482" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -144,19 +158,18 @@
             <objects>
                 <viewController id="MJF-HS-9Hn" customClass="OptionsViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UWD-NK-5tM">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-3" maxValue="3" minimumValueImage="flame" catalog="system" maximumValueImage="flame.fill" translatesAutoresizingMaskIntoConstraints="NO" id="O0u-Zp-Rc7">
-                                <rect key="frame" x="97" y="148" width="197" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-3" maxValue="3" minimumValueImage="flame" catalog="system" maximumValueImage="flame.fill" translatesAutoresizingMaskIntoConstraints="NO" id="O0u-Zp-Rc7">
+                                <rect key="frame" x="97" y="191" width="196" height="31"/>
                                 <connections>
                                     <action selector="difficultySlider:" destination="MJF-HS-9Hn" eventType="valueChanged" id="cCT-lA-4Jg"/>
                                     <action selector="difficultySlider:" destination="GWH-pq-Jdy" eventType="valueChanged" id="su5-OL-QTU"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpp-BB-0zi">
-                                <rect key="frame" x="130" y="72" width="130.33333333333337" height="41"/>
+                                <rect key="frame" x="130" y="116" width="130.33333333333337" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -167,6 +180,9 @@
                         <constraints>
                             <constraint firstItem="bpp-BB-0zi" firstAttribute="top" secondItem="xXQ-py-obp" secondAttribute="top" constant="25" id="34X-cx-F4q"/>
                             <constraint firstItem="bpp-BB-0zi" firstAttribute="centerX" secondItem="UWD-NK-5tM" secondAttribute="centerX" id="3r7-AX-ho5"/>
+                            <constraint firstItem="O0u-Zp-Rc7" firstAttribute="centerX" secondItem="bpp-BB-0zi" secondAttribute="centerX" id="Shp-zg-13G"/>
+                            <constraint firstItem="O0u-Zp-Rc7" firstAttribute="top" secondItem="xXQ-py-obp" secondAttribute="top" constant="100" id="v4q-lq-9rP"/>
+                            <constraint firstItem="O0u-Zp-Rc7" firstAttribute="leading" secondItem="xXQ-py-obp" secondAttribute="leading" constant="99" id="yMR-XV-iW7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Krp-lH-u52"/>
@@ -183,7 +199,6 @@
     <resources>
         <image name="flame" catalog="system" width="106" height="128"/>
         <image name="flame.fill" catalog="system" width="106" height="128"/>
-        <image name="rock" width="308" height="363"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
