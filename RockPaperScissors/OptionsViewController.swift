@@ -22,7 +22,6 @@ class OptionsViewController: UIViewController {
         let step: Float = 1
         let roundedValue = round(sender.value / step) * step
         sender.value = roundedValue
-        print(sender.value)
         let defaults = UserDefaults.standard
         defaults.set(sender.value, forKey: "Difficulty")
     }
