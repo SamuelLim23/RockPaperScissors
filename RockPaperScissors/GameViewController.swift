@@ -52,7 +52,7 @@ class GameViewController: UIViewController {
             textOutlet.text = "You win!"
             
         case .undefined:
-            textOutlet.text = "How the fuck did you manage to do that?" // TODO: Change to school appropriate language
+            textOutlet.text = "Should not be reached" // Oops
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [self] in
